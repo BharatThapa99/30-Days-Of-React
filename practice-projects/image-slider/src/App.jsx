@@ -7,5 +7,7 @@ import { ImageSlider } from './ImageSlider'
 
 const images = [car1,car2,car3,car4]
 export default function App() {
-  return <ImageSlider imageUrls={images} />
+  return <div style={{maxWidth:"1200px",width:"100%", aspectRatio:"10/6",margin:"0 auto"}}>
+    <ImageSlider imageUrls={images} />
+    </div>
 }
