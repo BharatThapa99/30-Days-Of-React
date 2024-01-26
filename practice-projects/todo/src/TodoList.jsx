@@ -1,5 +1,5 @@
 import TodoItem from "./TodoItem"
-export default function TodoList(todos, toggleTodo) {
+export default function TodoList({todos, toggleTodo}) {
     
     return <>
      <ul className="list">
@@ -10,7 +10,6 @@ export default function TodoList(todos, toggleTodo) {
             {...todo}
             key={todo.id}
             toggleTodo={toggleTodo}
-            deleteTodo={deleteTodo}
           />
           )
         })}

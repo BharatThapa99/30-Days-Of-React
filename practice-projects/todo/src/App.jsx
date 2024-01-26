@@ -11,6 +11,10 @@ function App() {
     return JSON.parse(localValue)
   })
 
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(todos))
+  }, [todos])
+
   function addTodo(title) {
           setTodos(currentTodos => {
           return [
@@ -21,9 +25,6 @@ function App() {
       })
   }
 
-  useEffect(() => {
-    localStorage.setItem("ITEMS", JSON.stringify(todos))
-  }, [todos])
 
 function toggleTodo(id, completed) {
   setTodos(currentTodos => {
@@ -37,11 +38,11 @@ function toggleTodo(id, completed) {
 }
 
   return (
-  <>
+  <div className="container mx-auto px-4 w-9/12 text-center bg-teal-100	">
     <TodoForm onSubmit={addTodo}/>
-    <h1 className="header">Todo List</h1>
+    <h1 className="text-lg mt-4 font-bold underline">Todo List</h1>
     <TodoList todos={todos} toggleTodo={toggleTodo}/>
-      </>
+  </div>
   )
 }
 
